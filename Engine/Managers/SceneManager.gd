@@ -1,60 +1,49 @@
 extends Node
 
 
-onready var heart := preload('res://Heart/3D.tscn')
-onready var main_menu := preload('res://Interface/Menus/MainMenu.tscn')
-onready var game_over := preload('res://Interface/Menus/GameOver.tscn')
-onready var tween := $TransitionTween
-onready var color_rect := $TransitionFade
-onready var slide_sound := $TransitionSound
+onready var _transition_tween := $TransitionTween
+onready var _transition_overlay := $TransitionOverlay
+onready var _transition_sound := $TransitionSound
 onready var viewport_size := get_viewport().get_visible_rect().size
 
 export var transition_speed: float = 0.6
 
-var current_scene
-var secret = '55'
-enum SCENES {
-	MAIN_MENU,
-	GAME_OVER,
-	HEART,
-	MAIN_GAME
-}
-
-var scene_dictionary: Dictionary = {
-			SCENES.MAIN_MENU: load("res://Interface/Menus/MainMenu.tscn"),
-			SCENES.GAME_OVER: load("res://Interface/Menus/GameOver.tscn"),
-			SCENES.HEART: load("res://Heart/3D.tscn"),
-			SCENES.MAIN_GAME: load("res://World/MainGame.tscn")
-}
+var current_scene: PackedScene
 
 func _ready() -> void:
-	color_rect.rect_size = viewport_size
-	color_rect.margin_bottom = -viewport_size.x
+	var node := Node.new()
+	get_tree().get_root().connect("size_changed", self, "recalculate_resolution")
+	_recalculate_resolution()
 
 func reload_level() -> void:
-	transition_to_scene(scene_dictionary[current_scene.level_name])
-
-func start_game() -> void:
-	transition_to_scene(scene_dictionary[SCENES.MAIN_GAME])
+	transition_to_scene(current_scene)
 
 func transition_to_scene(scene: PackedScene) -> void:
+	_recalculate_resolution()
 	SignalManager.emit_signal("slide_down_start")
-	slide_down()
-	yield(tween, "tween_all_completed")
+	_slide_down()
+	yield(_transition_tween, "tween_all_completed")
 	SignalManager.emit_signal("slide_down_finish")
 	get_tree().change_scene_to(scene)
-	slide_up()
-	yield(tween, "tween_all_completed")
+	_slide_up()
+	yield(_transition_tween, "tween_all_completed")
 	SignalManager.emit_signal("slide_up_finish")
-	
-func slide_down() -> void:
-	tween.interpolate_property(color_rect, "margin_bottom", color_rect.margin_bottom, 0, transition_speed, Tween.TRANS_EXPO, Tween.EASE_OUT)
-	tween.start()
-	slide_sound.pitch_scale = 1
-	slide_sound.play()
+	current_scene = scene
 
-func slide_up() -> void:
-	tween.interpolate_property(color_rect, "margin_bottom", color_rect.margin_bottom, -viewport_size.y, transition_speed, Tween.TRANS_EXPO, Tween.EASE_OUT)
-	tween.start()
-	slide_sound.pitch_scale = 1.1
-	slide_sound.play()
+func _slide_down() -> void:
+	_transition_tween.interpolate_property(_transition_overlay, "margin_bottom", _transition_overlay.margin_bottom, 0, transition_speed, Tween.TRANS_EXPO, Tween.EASE_OUT)
+	_transition_tween.start()
+	_transition_sound.pitch_scale = 1
+	_transition_sound.play()
+
+func _slide_up() -> void:
+	_transition_tween.interpolate_property(_transition_overlay, "margin_bottom", _transition_overlay.margin_bottom, -viewport_size.y, transition_speed, Tween.TRANS_EXPO, Tween.EASE_OUT)
+	_transition_tween.start()
+	_transition_sound.pitch_scale = 1.1
+	_transition_sound.play()
+
+func _recalculate_resolution() -> void:
+	print('screen size changed')
+	viewport_size = get_viewport().get_visible_rect().size
+	_transition_overlay.rect_size = viewport_size
+	_transition_overlay.margin_bottom = -viewport_size.y

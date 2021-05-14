@@ -3,6 +3,7 @@ extends CanvasLayer
 var secret = '55'
 var showing = false
 onready var viewport_size := get_viewport().get_visible_rect().size
+export(PackedScene) var heart_scene := preload("res://Heart/3D.tscn")
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('debug') and not showing and not $Tween.is_active():
@@ -16,7 +17,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_LineEdit_text_entered(new_text: String) -> void:
 	if $LineEdit.text == secret:
-		SceneManager.transition_to_scene(SceneManager.scene_dictionary[SceneManager.SCENES.HEART])
+		SceneManager.transition_to_scene(heart_scene)
 	$LineEdit.text = ''
 
 func _on_Tween_tween_all_completed() -> void:
