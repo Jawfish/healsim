@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Heart/Heart.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Heart/cory_procsky_env.tres" type="Environment" id=2]
+[ext_resource path="res://Heart/3D.gd" type="Script" id=3]
+
+[node name="3D" type="Spatial"]
+script = ExtResource( 3 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.01861 )
+environment = ExtResource( 2 )
+projection = 1
+current = true
+
+[node name="Heart" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.095091, 0 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.999991, 0.000585269, -0.00427702, 0.00147412, 0.884916, 0.465749, 0.00405739, -0.465751, 0.884907, 0, 0, 3.49903 )
+light_energy = 0.5

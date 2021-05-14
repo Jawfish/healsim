@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Engine/Managers/SceneManager.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/woosh.ogg" type="AudioStream" id=2]
+
+[node name="SceneManager" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="TransitionSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+
+[node name="TransitionFade" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TransitionTween" type="Tween" parent="."]
+
+[node name="DebugTween" type="Tween" parent="."]
