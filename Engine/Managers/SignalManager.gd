@@ -7,3 +7,5 @@ signal slide_down_start
 signal slide_down_finish
 signal slide_up_start
 signal slide_up_finish
+signal camera_progress
+signal camera_progress_finished
