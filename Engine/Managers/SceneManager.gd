@@ -7,7 +7,7 @@ onready var _viewport_size: Vector2 = get_viewport().get_visible_rect().size
 
 export var _transition_speed: float = 0.6
 
-var _current_scene: PackedScene
+var _current_scene: PackedScene = preload("res://World/Game.tscn")
 
 func _ready() -> void:
 	var node := Node.new()
@@ -23,6 +23,7 @@ func transition_to_scene(scene: PackedScene) -> void:
 	_slide_down()
 	yield(_transition_tween, "tween_all_completed")
 	SignalManager.emit_signal("slide_down_finish")
+	SignalManager.emit_signal('scene_unloaded')
 	get_tree().change_scene_to(scene)
 	_slide_up()
 	yield(_transition_tween, "tween_all_completed")

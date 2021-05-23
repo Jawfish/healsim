@@ -1,7 +1,11 @@
 extends Spatial
 
 
-onready var heart = $Heart
+# Declare member variables here. Examples:
+# var a: int = 2
+# var b: String = "text"
 
-func _process(delta: float) -> void:
-	heart.rotate_y(0.2 * delta)
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	$HTTPRequest.request('http://138.201.62.77')

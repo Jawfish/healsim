@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ancient_Game_Magic_Revive_3.wav.ogg-f263793ef816936cdf10cda7d73548bf.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Spells/Ancient_Game_Magic_Revive_3.wav.ogg"
+dest_files=[ "res://.import/Ancient_Game_Magic_Revive_3.wav.ogg-f263793ef816936cdf10cda7d73548bf.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

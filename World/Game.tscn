@@ -1,0 +1,287 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://World/Game.gd" type="Script" id=1]
+[ext_resource path="res://Interface/Game/BossHealth.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Actors/Boss.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Engine/Abilities/PlayerAbilities/Heal.tres" type="Resource" id=4]
+[ext_resource path="res://Interface/Game/PlayerMana.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Interface/Spells/Spell.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Interface/UnitFrames/UnitFrame.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Engine/Abilities/PlayerAbilities/Refresh.tres" type="Resource" id=8]
+[ext_resource path="res://Engine/Abilities/PlayerAbilities/Cure.tres" type="Resource" id=9]
+[ext_resource path="res://Engine/Abilities/PlayerAbilities/Shield.tres" type="Resource" id=10]
+[ext_resource path="res://Engine/Abilities/PlayerAbilities/Prayer.tres" type="Resource" id=11]
+[ext_resource path="res://Assets/Fonts/Inter-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://World/SpellDescription.gd" type="Script" id=13]
+[ext_resource path="res://Assets/Sounds/Music/Preparing_For_The_Assault_Light_LOOP.wav" type="AudioStream" id=14]
+[ext_resource path="res://Assets/Images/background.png" type="Texture" id=15]
+
+[sub_resource type="Animation" id=1]
+resource_name = "show_boss_health"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("BossHealth/HealthBar:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 360, 320 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = ExtResource( 12 )
+
+[node name="Game" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameScreen" type="Control" parent="."]
+anchor_right = 1.0
+margin_bottom = 640.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="GameScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.305882, 0.34902, 0.32549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="background" type="Sprite" parent="GameScreen/Background"]
+position = Vector2( 383.385, 316.765 )
+scale = Vector2( 1.34681, 1.34681 )
+texture = ExtResource( 15 )
+
+[node name="Boss" parent="." instance=ExtResource( 3 )]
+position = Vector2( 360, 360 )
+scale = Vector2( 1, 1 )
+
+[node name="Controls" type="Control" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -640.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Controls"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.898039, 0.760784, 0.584314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BossHealth" parent="." instance=ExtResource( 2 )]
+margin_left = 25.0
+margin_top = -620.0
+margin_right = -25.0
+margin_bottom = -580.0
+mouse_filter = 2
+
+[node name="PlayerMana" parent="." instance=ExtResource( 5 )]
+margin_left = 20.0
+margin_top = 1059.0
+margin_right = -20.0
+margin_bottom = 1089.0
+mouse_filter = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/show_boss_health = SubResource( 1 )
+
+[node name="UnitFrames" type="GridContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 302.0
+custom_constants/vseparation = 26
+custom_constants/hseparation = 10
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UnitFrame" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 128.0
+margin_bottom = 128.0
+
+[node name="UnitFrame2" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 138.0
+margin_right = 266.0
+margin_bottom = 128.0
+
+[node name="UnitFrame3" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 276.0
+margin_right = 404.0
+margin_bottom = 128.0
+
+[node name="UnitFrame4" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 414.0
+margin_right = 542.0
+margin_bottom = 128.0
+
+[node name="UnitFrame5" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 552.0
+margin_right = 680.0
+margin_bottom = 128.0
+
+[node name="UnitFrame6" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 154.0
+margin_right = 128.0
+margin_bottom = 282.0
+
+[node name="UnitFrame7" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 138.0
+margin_top = 154.0
+margin_right = 266.0
+margin_bottom = 282.0
+
+[node name="UnitFrame8" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 276.0
+margin_top = 154.0
+margin_right = 404.0
+margin_bottom = 282.0
+
+[node name="UnitFrame9" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 414.0
+margin_top = 154.0
+margin_right = 542.0
+margin_bottom = 282.0
+
+[node name="UnitFrame10" parent="UnitFrames" instance=ExtResource( 7 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 552.0
+margin_top = 154.0
+margin_right = 680.0
+margin_bottom = 282.0
+
+[node name="Spells" type="GridContainer" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 20.0
+margin_top = 457.0
+margin_bottom = 717.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spell" parent="Spells" instance=ExtResource( 6 )]
+spell_number = "1"
+ability = ExtResource( 4 )
+
+[node name="Spell2" parent="Spells" instance=ExtResource( 6 )]
+margin_left = 138.0
+margin_right = 266.0
+spell_number = "2"
+ability = ExtResource( 8 )
+
+[node name="Spell3" parent="Spells" instance=ExtResource( 6 )]
+margin_left = 276.0
+margin_right = 404.0
+spell_number = "3"
+ability = ExtResource( 9 )
+
+[node name="Spell4" parent="Spells" instance=ExtResource( 6 )]
+margin_left = 414.0
+margin_right = 542.0
+spell_number = "4"
+ability = ExtResource( 10 )
+
+[node name="Spell5" parent="Spells" instance=ExtResource( 6 )]
+margin_left = 552.0
+margin_right = 680.0
+spell_number = "5"
+ability = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 360, 960 )
+shape = SubResource( 2 )
+
+[node name="SpellDescription" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_bottom = -10.0
+custom_fonts/font = SubResource( 3 )
+align = 1
+valign = 1
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="PotionTimer" type="Timer" parent="Timers"]
+wait_time = 7.0
+autostart = true
+
+[node name="AttackTimer" type="Timer" parent="Timers"]
+
+[node name="SuperFire" type="Timer" parent="Timers"]
+wait_time = 0.5
+
+[node name="Attacks" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+autoplay = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="timeout" from="Timers/PotionTimer" to="." method="_on_PotionTimer_timeout"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_AttackTimer_timeout"]
+[connection signal="timeout" from="Timers/SuperFire" to="." method="_on_SuperFire_timeout"]

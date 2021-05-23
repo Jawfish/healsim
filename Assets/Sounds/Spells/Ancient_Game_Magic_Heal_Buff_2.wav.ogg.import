@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ancient_Game_Magic_Heal_Buff_2.wav.ogg-aa26026e9997f9c702ffdbbf642ec940.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Spells/Ancient_Game_Magic_Heal_Buff_2.wav.ogg"
+dest_files=[ "res://.import/Ancient_Game_Magic_Heal_Buff_2.wav.ogg-aa26026e9997f9c702ffdbbf642ec940.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

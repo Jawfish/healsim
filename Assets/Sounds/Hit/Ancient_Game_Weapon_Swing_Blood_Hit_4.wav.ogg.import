@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ancient_Game_Weapon_Swing_Blood_Hit_4.wav.ogg-ed1e9635df21e4f80d4e49c976ca83a2.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Hit/Ancient_Game_Weapon_Swing_Blood_Hit_4.wav.ogg"
+dest_files=[ "res://.import/Ancient_Game_Weapon_Swing_Blood_Hit_4.wav.ogg-ed1e9635df21e4f80d4e49c976ca83a2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

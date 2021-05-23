@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/HOT MAGIC SPELL THROW - Fast Fire or Lava Whoosh - 01    [003703].wav-d530b0f777e3e275bcfa32526e2d5325.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/HOT MAGIC SPELL THROW - Fast Fire or Lava Whoosh - 01    [003703].wav"
+dest_files=[ "res://.import/HOT MAGIC SPELL THROW - Fast Fire or Lava Whoosh - 01    [003703].wav-d530b0f777e3e275bcfa32526e2d5325.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

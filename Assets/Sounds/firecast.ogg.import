@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/firecast.ogg-936864b95e035690ab989ca5f3beb1ff.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/firecast.ogg"
+dest_files=[ "res://.import/firecast.ogg-936864b95e035690ab989ca5f3beb1ff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

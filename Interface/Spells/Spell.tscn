@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Images/spells/SpellBookPage09_110.png" type="Texture" id=1]
+[ext_resource path="res://Interface/Spells/Spell.gd" type="Script" id=2]
+[ext_resource path="res://Interface/Hover/HoverRect.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Fonts/Comfortaa-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Interface/CooldownProgress.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Engine/Abilities/PlayerAbilities/ExamplePlayerAbility.tres" type="Resource" id=6]
+[ext_resource path="res://Assets/Sounds/switch10.ogg" type="AudioStream" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="TextureButton" type="TextureButton"]
+margin_right = 128.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 128, 128 )
+texture_normal = ExtResource( 1 )
+expand = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+ability = ExtResource( 6 )
+
+[node name="HoverRect" parent="." instance=ExtResource( 3 )]
+margin_right = -128.0
+margin_bottom = -128.0
+
+[node name="SpellNumber" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+text = "0"
+uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CooldownProgress" parent="." instance=ExtResource( 5 )]
+
+[node name="GCD" type="Timer" parent="."]
+one_shot = true
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="SpellSFX" type="AudioStreamPlayer" parent="."]
+
+[connection signal="mouse_entered" from="." to="." method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_TextureButton_mouse_exited"]
+[connection signal="pressed" from="." to="." method="_on_TextureButton_pressed"]
+[connection signal="timeout" from="GCD" to="." method="_on_GCD_timeout"]

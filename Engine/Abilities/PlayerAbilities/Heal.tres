@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Engine/Abilities/PlayerAbilities/PlayerAbility.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Images/SpellIcons/SpellBookPage09_add_003.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sounds/Spells/Ancient_Game_Heal_Character_Magic_Spell.wav.ogg" type="AudioStream" id=3]
+
+[resource]
+script = ExtResource( 1 )
+ability_name = "Heal"
+description = "Restore the target's health."
+effects = [  ]
+cast_time = 0.0
+icon = ExtResource( 2 )
+mana_cost = 2
+sound_effect = ExtResource( 3 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ancient_Game_Light_Magic_Hit_1.wav.ogg-630bc55a0eb35e0bdcd1ca37a40df736.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Spells/Ancient_Game_Light_Magic_Hit_1.wav.ogg"
+dest_files=[ "res://.import/Ancient_Game_Light_Magic_Hit_1.wav.ogg-630bc55a0eb35e0bdcd1ca37a40df736.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

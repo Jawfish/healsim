@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/STORM MAGIC SPELL - Cinematic Electricity Thunder Hit - Weapon Throw Impact 01    [003789].wav-05cac0b0cf1728e97c20cad5a72edcb3.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/STORM MAGIC SPELL - Cinematic Electricity Thunder Hit - Weapon Throw Impact 01    [003789].wav"
+dest_files=[ "res://.import/STORM MAGIC SPELL - Cinematic Electricity Thunder Hit - Weapon Throw Impact 01    [003789].wav-05cac0b0cf1728e97c20cad5a72edcb3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

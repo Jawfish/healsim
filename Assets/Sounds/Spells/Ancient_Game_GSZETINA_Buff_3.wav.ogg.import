@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ancient_Game_GSZETINA_Buff_3.wav.ogg-8dadc8fdeb9764516f9eba2d67e38902.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Spells/Ancient_Game_GSZETINA_Buff_3.wav.ogg"
+dest_files=[ "res://.import/Ancient_Game_GSZETINA_Buff_3.wav.ogg-8dadc8fdeb9764516f9eba2d67e38902.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

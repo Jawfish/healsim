@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fanfare_04_Long_Version_01.wav-7e3021e8b9e7597f1628bdddc81bd75f.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Fanfare_04_Long_Version_01.wav"
+dest_files=[ "res://.import/Fanfare_04_Long_Version_01.wav-7e3021e8b9e7597f1628bdddc81bd75f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

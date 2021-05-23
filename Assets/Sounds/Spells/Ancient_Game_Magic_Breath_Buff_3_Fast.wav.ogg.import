@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Ancient_Game_Magic_Breath_Buff_3_Fast.wav.ogg-80de9b53c214e52412e42cf0f5671eca.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/Spells/Ancient_Game_Magic_Breath_Buff_3_Fast.wav.ogg"
+dest_files=[ "res://.import/Ancient_Game_Magic_Breath_Buff_3_Fast.wav.ogg-80de9b53c214e52412e42cf0f5671eca.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fanfare_06_Short_Version_01.wav-8f980c3a05fe2f628ac9d6db4a2b2235.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Fanfare_06_Short_Version_01.wav"
+dest_files=[ "res://.import/Fanfare_06_Short_Version_01.wav-8f980c3a05fe2f628ac9d6db4a2b2235.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

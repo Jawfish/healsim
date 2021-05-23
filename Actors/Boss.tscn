@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Actors/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Actors/Boss.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Images/Boss Dragon 2 4X.png" type="Texture" id=3]
+
+[node name="Boss" instance=ExtResource( 1 )]
+scale = Vector2( 1.00918, 1.01836 )
+script = ExtResource( 2 )
+max_health = 25000
+
+[node name="Sprite" parent="." index="1"]
+position = Vector2( 0, 125.692 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 3 )
+flip_h = false
+region_enabled = false
+region_rect = Rect2( 3, 132, 24, 17.146 )
+
+[node name="DamageText" type="Position2D" parent="." index="2"]
+position = Vector2( -16.0264, -167.7 )

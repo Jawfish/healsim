@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Preparing_For_The_Assault_Light_LOOP.wav-c78218d95f4adf76fb67ab18931af5dc.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Music/Preparing_For_The_Assault_Light_LOOP.wav"
+dest_files=[ "res://.import/Preparing_For_The_Assault_Light_LOOP.wav-c78218d95f4adf76fb67ab18931af5dc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
